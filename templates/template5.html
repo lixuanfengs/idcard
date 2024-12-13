@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ID</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入Font Awesome CSS库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e6e6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            width: 450px;
+            height: 280px;
+            border-radius: 16px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .header {
+            background-color: #57068c;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-container img {
+            width: 160px;
+            height: auto;
+        }
+        .card-title {
+            color: #ffffff;
+            text-align: right;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .separator-line {
+            height: 5px;
+            background-color: #f1c40f;
+            margin-top: -4px;
+        }
+        .card-body {
+            display: flex;
+            padding: 18px;
+            flex: 1;
+            position: relative;
+        }
+        .photo-container {
+            width: 110px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+            margin-right: 25px;
+        }
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .student-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .student-info p {
+            font-size: 15px;
+            margin-bottom: 0; /* Remove margin */
+            line-height: 2; /* Reduce line height for tighter spacing */
+        }
+        .student-info p strong {
+            color: #57068c;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 15px;
+            background-color: #57068c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 12px;
+        }
+        .graduation-icon {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            font-size: 30px;
+            color: #57068c;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="header">
+        <div class="logo-container">
+            <img src="{{schoolLogo}}" alt="School Logo">
+        </div>
+        <div class="card-title">
+            {{schoolName}}<br>
+            <small>Student ID Card</small>
+        </div>
+    </div>
+    <div class="separator-line"></div>
+    <div class="card-body">
+        <div class="photo-container">
+            <img src="{{studentPhoto}}" alt="Student Photo">
+        </div>
+        <div class="student-info">
+            <p><strong>Name:</strong> {{name}}</p>
+            <p><strong>Student ID:</strong> {{studentId}}</p>
+            <p><strong>Major:</strong> {{major}}</p>
+            <p><strong>Enrollment Year:</strong> {{enrollmentDate}}</p>
+            <p><strong>Graduation Year:</strong> {{graduationDate}}</p>
+        </div>
+    </div>
+    <div class="graduation-icon">
+        <!-- 使用Font Awesome的毕业帽图标 -->
+        <i class="fas fa-graduation-cap"></i>
+    </div>
+    <div class="footer">
+    </div>
+</div>
+</body>
+</html>
